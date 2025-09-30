@@ -30,22 +30,29 @@
     <script type='text/javascript'>
     	function initEmbeddedMessaging() {
     		try {
-    			// Set the target element for the messaging widget
-    			const targetElement = document.getElementById('salesforce-messaging-target');
-    			if (targetElement) {
-    				embeddedservice_bootstrap.settings.targetElement = targetElement;
+    			// Wait for the React app to load and find the target element
+    			function waitForTargetElement() {
+    				const targetElement = document.getElementById('salesforce-messaging-target');
+    				if (targetElement) {
+    					embeddedservice_bootstrap.settings.targetElement = targetElement;
+    					embeddedservice_bootstrap.settings.language = 'en_US';
+
+    					embeddedservice_bootstrap.init(
+    						'00DSB00000aQFUw',
+    						'Coral_Resorts_Agent_channel',
+    						'https://orgfarm-9251c629b7.test1.my.pc-rnd.site.com/ESWCoralResortsAgentch1759217869604',
+    						{
+    							scrt2URL: 'https://orgfarm-9251c629b7.test1.my.pc-rnd.salesforce-scrt.com'
+    						}
+    					);
+    				} else {
+    					// Retry after 100ms if element not found
+    					setTimeout(waitForTargetElement, 100);
+    				}
     			}
     			
-    			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-
-    			embeddedservice_bootstrap.init(
-    				'00DSB00000aQFUw',
-    				'Coral_Resorts_Agent_channel',
-    				'https://orgfarm-9251c629b7.test1.my.pc-rnd.site.com/ESWCoralResortsAgentch1759217869604',
-    				{
-    					scrt2URL: 'https://orgfarm-9251c629b7.test1.my.pc-rnd.salesforce-scrt.com'
-    				}
-    			);
+    			// Start waiting for the target element
+    			waitForTargetElement();
     		} catch (err) {
     			console.error('Error loading Embedded Messaging: ', err);
     		}
