@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/coral-cloud-resorts/static/css/main.cd7a256c.css",
+    "main.js": "/coral-cloud-resorts/static/js/main.e48c0659.js",
+    "static/js/453.4b272eb6.chunk.js": "/coral-cloud-resorts/static/js/453.4b272eb6.chunk.js",
+    "index.html": "/coral-cloud-resorts/index.html",
+    "main.cd7a256c.css.map": "/coral-cloud-resorts/static/css/main.cd7a256c.css.map",
+    "main.e48c0659.js.map": "/coral-cloud-resorts/static/js/main.e48c0659.js.map",
+    "453.4b272eb6.chunk.js.map": "/coral-cloud-resorts/static/js/453.4b272eb6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cd7a256c.css",
+    "static/js/main.e48c0659.js"
+  ]
+}
