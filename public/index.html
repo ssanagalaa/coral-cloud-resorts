@@ -24,7 +24,28 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Coral Cloud Resorts</title>
+    
+    <!-- Salesforce Embedded Messaging -->
+    <script type='text/javascript'>
+    	function initEmbeddedMessaging() {
+    		try {
+    			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+    			embeddedservice_bootstrap.init(
+    				'00DSB00000aQFUw',
+    				'Coral_Resorts_Agent_channel',
+    				'https://orgfarm-9251c629b7.test1.my.pc-rnd.site.com/ESWCoralResortsAgentch1759217869604',
+    				{
+    					scrt2URL: 'https://orgfarm-9251c629b7.test1.my.pc-rnd.salesforce-scrt.com'
+    				}
+    			);
+    		} catch (err) {
+    			console.error('Error loading Embedded Messaging: ', err);
+    		}
+    	};
+    </script>
+    <script type='text/javascript' src='https://orgfarm-9251c629b7.test1.my.pc-rnd.site.com/ESWCoralResortsAgentch1759217869604/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
