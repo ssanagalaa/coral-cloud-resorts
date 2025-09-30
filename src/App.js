@@ -147,6 +147,9 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Salesforce Embedded Messaging Target */}
+      <div id="salesforce-messaging-target"></div>
     </div>
   );
 }

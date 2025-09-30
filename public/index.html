@@ -30,6 +30,12 @@
     <script type='text/javascript'>
     	function initEmbeddedMessaging() {
     		try {
+    			// Set the target element for the messaging widget
+    			const targetElement = document.getElementById('salesforce-messaging-target');
+    			if (targetElement) {
+    				embeddedservice_bootstrap.settings.targetElement = targetElement;
+    			}
+    			
     			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 
     			embeddedservice_bootstrap.init(
